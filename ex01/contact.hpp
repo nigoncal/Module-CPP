@@ -4,16 +4,15 @@
 class contact
 {
 	public :
-		std::string show_contact() const;
 		void print_attribute() const;
+		void set_attribute();
+		std::string show_contact() const;
 		
-	
 		std::string get_first_name() const; 
 		std::string get_last_name() const;
 		std::string get_nickname() const;
 		std::string get_phone_number() const;
 		std::string get_darkest_secret() const;
-		void set_attribute();
 
 	private :
 

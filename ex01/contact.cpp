@@ -45,7 +45,7 @@ void contact::print_attribute() const
 	std::cout<<"Last name : ";
 	std::cout << this->_last_name<<std::endl;
 	std::cout<<"Nickname : ";
-	std::cout << this->_nickname.substr(0, 9)<< "."<<std::endl;
+	std::cout << this->_nickname<<std::endl;
 	std::cout<<"Phone_number : ";
 	std::cout << this->_phone_number<<std::endl;
 	std::cout<<"Darknest_secret : ";

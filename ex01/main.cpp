@@ -26,22 +26,25 @@ void	function_search(contact *list, int i)
 				std::cout<<"|"<<std::setw(10)<<"nick_name"<<"|"<<std::endl;
 				for(int j = 0; j != i; j++)
 				{
-					std::cout<<"|"<<std::setw(10)<<j;
+					std::cout<<"|"<<std::setw(10)<<j + 1;
 					std::cout<<"|"<<std::setw(10)<<resize_string(list[j].get_first_name());
 					std::cout<<"|"<<std::setw(10)<<resize_string(list[j].get_last_name());
 					std::cout<<"|"<<std::setw(10)<<resize_string(list[j].get_nickname())<<"|"<<std::endl;
 				}
-				std::cout<<std::endl<<"index : ";
-				std::cin.ignore();
-				std::getline(std::cin, buffer);
-				//std::cin>>buffer;
-				index = atoi(buffer.c_str());
-				if((index >= 0 && index <= 8) && index < i)
-					std::cout<<index;
-				else
-					std::cout<<"erreur index"<<std::endl;
+					std::cout<<std::endl<<"index : ";
+					std::cin.ignore();
+					std::getline(std::cin, buffer);
+					index = atoi(buffer.c_str());
+					if((index >= 1 && index <= 8) && buffer.size() == 1 && index <= i)
+						list[index - 1].print_attribute();
+					else
+					{
+						std::cout<<"erreur index"<<std::endl;
+						std::cout<<buffer.size()<<std::endl;
+						std::cout<<buffer[0]<<std::endl;
+						std::cout<<index<<std::endl;
+					}
 			}
-				//	list[index].print_attribute();
 }
 
 int main ()
@@ -71,9 +74,7 @@ int main ()
 				std::cout<<"contact full !"<<std::endl;
 		}
 		if(!get_string.compare("SEARCH"))
-		{
 			function_search(list, i );
-		}
 	}
 
 }
