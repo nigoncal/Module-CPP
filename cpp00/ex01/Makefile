@@ -12,13 +12,16 @@ UNDER       		=    \033[4m
 SUR					=    \033[7m
 END					=    \033[0m
 
-EXE					=	megaphone
+EXE					=	nul
 
 SRCS_PATH			=	.
-SRCS_FILE			=	megaphone.cpp
+SRCS_FILE			=	main.cpp \
+						contact.cpp
 
 SRCS				=	$(addprefix $(SRCS_PATH)/, $(SRCS_FILE))
-OBJ_PATH			=	.obj
+
+INC_PATH			=	.
+INC					=	$(INC_PATH)/contact.hpp
 
 CPPFLAG				=	-std=c++98
 
@@ -29,7 +32,7 @@ RM					=	rm -rf
 all					:	$(EXE)
 
 $(EXE)				:	$(SRCS)
-						@$(COMP) $(SRCS) -o $(EXE)
+						@$(COMP) $(SRCS) -o $(EXE) -I$(INC)
 						@printf "$(ERASE)$(GREEN)$(EXE)\t\t-->\tCREATE\n$(END)"
 
 clean				:

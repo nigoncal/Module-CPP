@@ -1,5 +1,4 @@
 #include "contact.hpp"
-#include <iomanip>
 
 std::string resize_string (std::string src)
 {
