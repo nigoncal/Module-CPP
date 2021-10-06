@@ -37,12 +37,7 @@ void	function_search(contact *list, int i)
 					if((index >= 1 && index <= 8) && buffer.size() == 1 && index <= i)
 						list[index - 1].print_attribute();
 					else
-					{
 						std::cout<<"erreur index"<<std::endl;
-						std::cout<<buffer.size()<<std::endl;
-						std::cout<<buffer[0]<<std::endl;
-						std::cout<<index<<std::endl;
-					}
 			}
 }
 

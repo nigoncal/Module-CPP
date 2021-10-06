@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 09:33:06 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/05 13:44:46 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/10/06 11:46:42 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,12 @@ void Account::_displayTimestamp(void)
 	std::time_t t = std::time(0);
 	std::tm *lt = localtime(&t);
 
-	std::cout << '[' << (lt->tm_year + 1900)
-			  << std::setw(2) << std::setfill('0') << (lt->tm_mon + 1)
-			  << std::setw(2) << std::setfill('0') << lt->tm_mday << '_'
-			  << std::setw(2) << std::setfill('0') << lt->tm_hour
-			  << std::setw(2) << std::setfill('0') << lt->tm_min
-			  << std::setw(2) << std::setfill('0') << lt->tm_sec << "] ";
+	std::cout << '[' << std::setfill('0') << (lt->tm_year + 1900)
+			  << std::setw(2)  << (lt->tm_mon + 1)
+			  << std::setw(2)  << lt->tm_mday << '_'
+			  << std::setw(2)  << lt->tm_hour
+			  << std::setw(2)  << lt->tm_min
+			  << std::setw(2)  << lt->tm_sec << "] ";
 }
 
 void Account::displayAccountsInfos(void)
