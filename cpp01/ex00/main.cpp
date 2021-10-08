@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 12:54:44 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/06 12:55:25 by nigoncal         ###   ########lyon.fr   */
+/*   Created: 2021/10/04 14:32:40 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/10/08 16:15:20 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 
-int main (int argc, char **argv)
+#include "Zombie.hpp"
+
+int	main (void)
 {
-	int i;
-
-	i = 1;
-	if(argc == 1)
-		std::cout<<"* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
-		while(i != argc)
-		{
-			for(int j = 0; argv[i][j] != '\0'; j++)
-				std::cout<<(char)toupper(argv[i][j]);
-			i++;
-		}
-	std::cout<<std::endl;
+	std::string names[6] = {"ZOMB1", "ZOMB2", "ZOMB3", "ZOMB4", "ZOMB5", "ZOMB6"};
+	randomChump();
+	randomChump();
+	randomChump();
 }

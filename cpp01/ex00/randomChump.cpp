@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 12:54:44 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/06 12:55:25 by nigoncal         ###   ########lyon.fr   */
+/*   Created: 2021/10/04 12:48:40 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/10/08 16:15:11 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Zombie.hpp"
 
-int main (int argc, char **argv)
+void randomChump( std::string name)
 {
-	int i;
+	srand(time(NULL) + clock());
+	Zombie* z = newZombie(name[rand() % 5]);
+	z->announce();
+	delete z;
+	return ;
 
-	i = 1;
-	if(argc == 1)
-		std::cout<<"* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
-		while(i != argc)
-		{
-			for(int j = 0; argv[i][j] != '\0'; j++)
-				std::cout<<(char)toupper(argv[i][j]);
-			i++;
-		}
-	std::cout<<std::endl;
 }

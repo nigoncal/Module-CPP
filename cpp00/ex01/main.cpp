@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/06 12:54:53 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/10/06 14:57:15 by nigoncal         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "contact.hpp"
 
 std::string resize_string (std::string src)
@@ -52,7 +64,7 @@ int main ()
 	while(status)
 	{
 		std::cin>>get_string;
-		if(!get_string.compare("EXIT"))
+		if(get_string == "EXIT")
 		{
 			std::cout<<"see you soon !"<<std::endl;
 			return(0);
