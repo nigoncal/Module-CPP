@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 12:48:40 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/04 14:59:41 by nigoncal         ###   ########lyon.fr   */
+/*   Created: 2021/10/11 15:58:53 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/10/12 13:51:02 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include"Weapon.hpp"
+#include<iostream>
 
-void	randomChump()
+class HumanA
 {
-	srand(time(NULL) + clock());
+	public :	
+	HumanA(std::string name, Weapon &weapon);
+	~HumanA(void);
 	
-	std::string names[5] = {"Jules", "Dorian", "jerem", "tutur", "seb"};
-	Zombie* z = newZombie(names[rand() % 4]);
+	void	attack(void) const;
 
-	z->announce();
-	delete z;
-	return ;
 
-}
+	bool	setWapon (Weapon& new_Weapon);
+	Weapon& getWeapon ( void ) const;
+
+	private :
+		std::string	name;
+		Weapon 		&weapon;
+};

@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 14:32:40 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/11 14:03:06 by nigoncal         ###   ########lyon.fr   */
+/*   Created: 2021/10/11 12:00:22 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/10/11 14:02:26 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Zombie.hpp"
 
-int	main (void)
+Zombie* zombieHorde(int N, std::string name)
 {
-	int nb_zombie = 15;
-	Zombie *horde = zombieHorde(nb_zombie, "roberta");
+	Zombie *zombieHorde = new Zombie[N];
 	
-	for(int i = 0; i != nb_zombie; i++)
-		horde[i].announce();
-	delete [] horde;
-
+	for(int i = 0; i < N ; i++)
+		zombieHorde[i].setName(name);
+		
+	return(zombieHorde);
 }

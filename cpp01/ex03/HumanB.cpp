@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 12:48:40 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/08 16:12:10 by nigoncal         ###   ########lyon.fr   */
+/*   Created: 2021/10/11 15:04:11 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/10/11 17:20:35 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include"HumanB.hpp"
+#include<iostream>
 
-void	randomChump()
+
+void	HumanB::attack(void) const
 {
-	srand(time(NULL) + clock());
-	std::string names[5] = {"Jules", "Dorian", "jerem", "tutur", "seb"};
-	Zombie* z = newZombie(names[rand() % 4]);
-	z->announce();
-	delete z;
-	return ;
-
+	if(this->Weapon == NULL)
+		std::cout<< this->_name << "as no weapon" << std::endl;
+	else
+		std::cout<< this->_name << "attack with" << this->Weapon->get_type()<<std::endl;
 }

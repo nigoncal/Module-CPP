@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 14:32:40 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/11 14:03:06 by nigoncal         ###   ########lyon.fr   */
+/*   Created: 2021/10/11 16:50:34 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/10/11 17:14:08 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include "Weapon.hpp"
 
-#include "Zombie.hpp"
-
-int	main (void)
+class HumanB
 {
-	int nb_zombie = 15;
-	Zombie *horde = zombieHorde(nb_zombie, "roberta");
+	public :	
+	HumanB(std::string name, Weapon &Weapon);
+	~HumanB(void);
 	
-	for(int i = 0; i != nb_zombie; i++)
-		horde[i].announce();
-	delete [] horde;
+	void	attack(void) const;
+	bool	setWeapon(Weapon& new_Weapon);
+	Weapon& getWeapon (void) const;
 
-}
+	private :
+		std::string	_name;
+		Weapon 		*Weapon;
+};

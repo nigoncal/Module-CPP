@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 12:37:58 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/04 12:40:49 by nigoncal         ###   ########lyon.fr   */
+/*   Created: 2021/10/11 15:03:09 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/10/13 11:17:25 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Zombie.hpp"
+#include"HumanA.hpp"
+#include <iostream>
 
-Zombie *newZombie(std::string name)
+	HumanA::HumanA(std::string name, Weapon &weapon) : name(name), Weapon(weapon)
+	{
+	}
+	
+	HumanA::~HumanA(void)
+	{
+	}
+	
+void HumanA::attack(void) const
 {
-	Zombie *z = new Zombie(name); // creation de l'instance zombie en allocation dynamique avec new
-	return(z);
+		std::cout<< this->_name << "attack with" << this->weapon->get_type()<<std::endl;
 }

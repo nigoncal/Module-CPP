@@ -12,17 +12,11 @@ UNDER       		=    \033[4m
 SUR					=    \033[7m
 END					=    \033[0m
 
-<<<<<<< HEAD
-EXE					=	zombie
-=======
-EXE					=	megaphone
->>>>>>> d1fd2ebe3794b03765209cf66a2fddad83ae2870
+EXE					=	ref
 
 SRCS_PATH			=	.
-SRCS_FILE			=	Zombie.cpp\
-						main.cpp\
-						newZombie.cpp\
-						randomChump.cpp
+SRCS_FILE			=	main.cpp\
+
 
 SRCS				=	$(addprefix $(SRCS_PATH)/, $(SRCS_FILE))
 OBJ_PATH			=	.obj
