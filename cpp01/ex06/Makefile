@@ -12,13 +12,12 @@ UNDER       		=    \033[4m
 SUR					=    \033[7m
 END					=    \033[0m
 
-EXE					=	zombie
+EXE					=	ref
 
 SRCS_PATH			=	.
-SRCS_FILE			=	Zombie.cpp\
-						main.cpp\
-						newZombie.cpp\
-						randomChump.cpp
+SRCS_FILE			=	main.cpp\
+						Karen.cpp\
+
 
 SRCS				=	$(addprefix $(SRCS_PATH)/, $(SRCS_FILE))
 OBJ_PATH			=	.obj
