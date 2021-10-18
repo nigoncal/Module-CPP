@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string.h>
 
 #ifndef KAREN_H
 #define KAREN_H
@@ -8,7 +9,7 @@ class Karen
 	
 
 private:
-	std::string ptrList[4];
+	int		level_int;
 	void 	debug(void);
 	void 	info(void);
 	void 	warning(void);

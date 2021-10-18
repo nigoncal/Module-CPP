@@ -1,18 +1,36 @@
 
-#include "karen.hpp"
+#include "Karen.hpp"
 
 	void Karen::complain(std::string level)
 	{
-		void (Karen::*ptr_coplain[4]) (void) = {
+		std::string complaint_level[4] = 
+		{
+			"DEBUG",
+			"INFO",
+			"WARNING",
+			"ERROR"
+		};
+		void (Karen::*ptr_complain[4]) (void) = { // tableau de pointeur sur méthode dans la quelle on stock nos fonctions 
 			
 			&Karen::debug,
 			&Karen::info,
 			&Karen::warning,
 			&Karen::error,
 		};
+
+
+		for(int i = 0; i != 4; i++)
+		{
+			if(level == complaint_level[i])
+			(this->*ptr_complain[i])(); //syntaxe pour appeller une fonction qui est stocke dans un tableau
+  		}
+
 	}
 
 	Karen::Karen(void)
+	{
+	}
+	Karen::~Karen(void)
 	{
 	}
 
@@ -39,3 +57,5 @@
 		std::cout 	<< "This is unacceptable," 
 					<< "I want to speak to the manager now.";
 	}
+
+
