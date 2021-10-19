@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:50:34 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/11 17:14:08 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/10/18 17:21:27 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,15 @@
 class HumanB
 {
 	public :	
-	HumanB(std::string name, Weapon &Weapon);
+	HumanB(std::string name);
 	~HumanB(void);
 	
 	void	attack(void) const;
-	bool	setWeapon(Weapon& new_Weapon);
+	
 	Weapon& getWeapon (void) const;
+	bool	setWeapon(Weapon& new_Weapon);
 
 	private :
-		std::string	_name;
-		Weapon 		*Weapon;
+		std::string	name;
+		Weapon 		*weapon;
 };

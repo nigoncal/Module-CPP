@@ -6,12 +6,11 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:58:53 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/12 13:51:02 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/10/18 17:23:00 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Weapon.hpp"
-#include<iostream>
+#include "Weapon.hpp"
 
 class HumanA
 {

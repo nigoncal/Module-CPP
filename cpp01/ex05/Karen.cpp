@@ -11,7 +11,7 @@
 			"ERROR"
 		};
 		void (Karen::*ptr_complain[4]) (void) = { // tableau de pointeur sur méthode dans la quelle on stock nos fonctions 
-			
+
 			&Karen::debug,
 			&Karen::info,
 			&Karen::warning,
@@ -22,7 +22,7 @@
 		for(int i = 0; i != 4; i++)
 		{
 			if(level == complaint_level[i])
-			(this->*ptr_complain[i])(); //syntaxe pour appeller une fonction qui est stocke dans un tableau
+			(this->*ptr_complain[i])() ; //syntaxe pour appeller une fonction qui est stocke dans un tableau
   		}
 
 	}
@@ -30,6 +30,7 @@
 	Karen::Karen(void)
 	{
 	}
+
 	Karen::~Karen(void)
 	{
 	}
