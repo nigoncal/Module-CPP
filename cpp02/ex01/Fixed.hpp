@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:40:26 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/19 17:14:43 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/10/21 12:00:54 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Fixed
 	~Fixed(void);
 
 	float toFloat(void) const;
-	int ToInt(void) const;
+	int toInt(void) const;
 
 	Fixed &operator=(const Fixed& other); // surcharge d'operateur egale
 	

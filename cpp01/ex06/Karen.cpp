@@ -7,10 +7,10 @@
 		{
 			"ERROR",
 			"WARNING",
-			"INFO"
-			"DEBUG",
+			"INFO",
+			"DEBUG"
 		};
-		for(int i = 0; i != 3; i++)
+		for(int i = 0; i != 4; i++)
 		{
 			if(level == store_level[i])
 			{
@@ -22,32 +22,19 @@
 		{
 
 			case 0 :
-			{
 				this->Karen::error();
-				break;
-			}
 
 			case 1 :
-			 
 				this->Karen::warning();
-				this->Karen::error();
-					break;
 
 			 case 2 :
-				this->Karen::error();
-				this->Karen::warning();
 				this->Karen::info();
-					break;
 			 
 			 case 3 :
-				this->Karen::error();
-				this->Karen::warning();
-				this->Karen::info();
 				this->Karen::debug();
 					break;
 			default :
 				std::cout<<"[ Probably complaining about insignificant problems ]";
-
 		}
 	
 	}

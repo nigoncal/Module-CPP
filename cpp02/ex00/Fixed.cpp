@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 13:07:48 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/19 17:11:19 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/10/21 11:46:11 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 Fixed::Fixed(void) : _value(0) // permet d'initialiser directement l'attribut
 {
 	std::cout<<"Default constructor called"<<std::endl;
+}
+
+Fixed::Fixed(const Fixed& copy)
+{
+	std::cout<<"copy constructor called"<<std::endl;
+	*this = copy;
 }
 
 Fixed::~Fixed(void)

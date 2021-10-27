@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 11:38:54 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/18 15:23:35 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/10/22 14:59:42 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ int main (void)
 	karen.complain("INFO");
 	karen.complain("WARNING");
 	karen.complain("BYE");
+
 }

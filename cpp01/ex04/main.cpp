@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:18:19 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/18 15:31:49 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/10/22 14:06:47 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main (int ac, char **av)
     std::string buffer;
     std::string s1;
     std::string s2;
-    size_t	end_pos = 0;
+    size_t	pos = 0;
 	size_t	first_pos = 0;
     if (ac != 4)
     {
@@ -65,12 +65,12 @@ int main (int ac, char **av)
     while (std::getline(read, buffer))
     {
         first_pos = 0;
-        end_pos = 0;
-        while ((end_pos = buffer.find(s1, first_pos)) != std::string::npos)
+        pos = 0;
+        while ((pos = buffer.find(s1, first_pos)) != std::string::npos)
         {
-            str.append(buffer, first_pos, end_pos - first_pos);
+            str.append(buffer, first_pos, pos - first_pos);
             str.append(s2);
-            first_pos = end_pos + s1.size();
+            first_pos = pos + s1.size();
         }
         str.append(buffer, first_pos);
         str.append("\n");

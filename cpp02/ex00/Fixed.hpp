@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:40:26 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/19 16:57:23 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/10/21 14:51:47 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Fixed
 	void setRawBits(const int raw);
 
 	private :
+
 	int					_value;
 	const static int	_fractional_bits = 8;
 };

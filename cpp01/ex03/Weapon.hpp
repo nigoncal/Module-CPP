@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:38:12 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/18 17:38:31 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/10/22 12:11:41 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Weapon
 
 	private :
 
-		std::string type;
+		std::string _type;
 };
 
 #endif

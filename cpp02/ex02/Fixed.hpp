@@ -6,31 +6,53 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:40:26 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/19 16:57:23 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/10/27 13:01:52 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef FIXED_H
+# define FIXED_H
+# include <iostream>
+# include <cmath>
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+class Fixed {
+    public:
+        Fixed(void);
+        Fixed(const Fixed& copy);
+        Fixed(float val);
+        Fixed(int val);
+        ~Fixed(void);
 
-class Fixed
-{
-	public :
+        float toFloat(void) const;
+        int toInt(void) const;
 
-	Fixed(void);
-	Fixed(const Fixed& copy); // constructeur par copie
-	~Fixed(void);
-
-	Fixed &operator=(const Fixed& other); // surcharge d'operateur egale
+        void operator=(const Fixed& a);
+        bool operator>(Fixed const &fixed);
+        bool operator<(Fixed const &fixed);
+        bool operator>=(Fixed const &fixed);
+        bool operator<=(Fixed const &fixed);
+        bool operator==(Fixed const &fixed);
+        bool operator!=(Fixed const &fixed);
 	
-	int getRawBits(void) const;
-	void setRawBits(const int raw);
+        Fixed operator+(Fixed const &fixed);
+        Fixed operator-(Fixed const &fixed);
+        Fixed operator*(Fixed const &fixed);
+        Fixed operator/(Fixed const &fixed);
+        Fixed &operator++(); //increment
+        Fixed &operator--();
+        Fixed operator++(int);
+        Fixed operator--(int);
 
-	private :
-	int					_value;
-	const static int	_fractional_bits = 8;
+        static Fixed max(Fixed const &a, Fixed const &b);
+        static Fixed min(Fixed const &a, Fixed const &b);
+	
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
+
+    private:
+        int                 _value;
+        const static int    _fractionnal_bits = 8;
 };
 
+std::ostream &operator<<(std::ostream &out, Fixed const &value);
 #endif
