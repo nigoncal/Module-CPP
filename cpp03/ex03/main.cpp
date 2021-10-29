@@ -6,19 +6,20 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 18:00:59 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/28 13:07:58 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/10/28 14:33:02 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
+#include"ScavTrap.hpp"
 
 int main (void)
 {
-	ClapTrap soldier = ClapTrap("John");
-    ClapTrap sol = ClapTrap(soldier);
-    soldier.attack("Mike");
-    soldier.takeDamage(30);
-    soldier.beRepaired(20);
-    
+	ScavTrap soldier = ScavTrap("John");
+
+    soldier.attack("bob"); // est redef dans le ScavTrap
+    soldier.takeDamage(30); // est call directement par rapport au parent
+    soldier.beRepaired(20); // est call directement par rapport au parent
+
+    soldier.highFivesGuys();
     return 0;
 }

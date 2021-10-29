@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 18:00:59 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/28 13:07:58 by nigoncal         ###   ########lyon.fr   */
+/*   Created: 2021/10/28 14:12:40 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/10/28 14:25:03 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
+#include <iostream>
+#include "ClapTrap.hpp"
 
-int main (void)
+
+class FragTrap : public ClapTrap
 {
-	ClapTrap soldier = ClapTrap("John");
-    ClapTrap sol = ClapTrap(soldier);
-    soldier.attack("Mike");
-    soldier.takeDamage(30);
-    soldier.beRepaired(20);
-    
-    return 0;
-}
+	public:
+			FragTrap(std::string name);
+			FragTrap(FragTrap const &copy);
+			~FragTrap(void);
+			FragTrap &operator=(FragTrap const &copy);
+	void	guardGate();
+	void  	attack(std::string const & target);
+		
+};

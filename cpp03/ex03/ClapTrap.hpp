@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 15:39:24 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/27 17:14:17 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/10/28 15:45:04 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	ClapTrap
 		 void takeDamage(unsigned int amount);
 		 void beRepaired(unsigned int amount);
 
-	private :
+	protected : //permet d'heriter
 		std::string _name;
 		int _Hitpoints;
 		int _Energy_points;

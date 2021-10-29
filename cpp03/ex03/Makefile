@@ -12,11 +12,14 @@ UNDER       		=    \033[4m
 SUR					=    \033[7m
 END					=    \033[0m
 
-EXE					=	ClapTrap
+EXE					=	ScavTrap
 
 SRCS_PATH			=	.
 SRCS_FILE			=	main.cpp\
-						ClapTrap.cpp
+						ClapTrap.cpp\
+						ScavTrap.cpp\
+						FragTrap.cpp\
+						DiamondTrap.cpp
 
 
 SRCS				=	$(addprefix $(SRCS_PATH)/, $(SRCS_FILE))
@@ -24,7 +27,7 @@ OBJ_PATH			=	.obj
 
 CPPFLAG				=	-std=c++98
 
-COMP				=	clang++ $(CPPFLAG) -Wall -Wextra -Werror
+COMP				=	clang++ $(CPPFLAG) -Wall -Wextra -Werror -Wshadow -Wno-shadow
 
 RM					=	rm -rf
 

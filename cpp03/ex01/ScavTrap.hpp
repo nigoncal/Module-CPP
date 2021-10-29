@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 18:00:59 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/28 13:07:58 by nigoncal         ###   ########lyon.fr   */
+/*   Created: 2021/10/28 11:29:12 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/10/28 13:04:33 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
+#include <iostream>
+#include "ClapTrap.hpp"
 
-int main (void)
+class ScavTrap : public ClapTrap
 {
-	ClapTrap soldier = ClapTrap("John");
-    ClapTrap sol = ClapTrap(soldier);
-    soldier.attack("Mike");
-    soldier.takeDamage(30);
-    soldier.beRepaired(20);
-    
-    return 0;
-}
+	public:
+			ScavTrap(std::string name);
+			ScavTrap(ScavTrap const &copy);
+			~ScavTrap(void);
+			ScavTrap &operator=(ScavTrap const &copy);
+	void	guardGate();
+	void  	attack(std::string const & target);
+		
+};
