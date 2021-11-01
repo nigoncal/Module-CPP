@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef  CLAP_TRAP_H
+# define CLAP_TRAP_H
+
 #include <iostream>
 
 class	ClapTrap
@@ -17,11 +20,13 @@ class	ClapTrap
 	public :
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const &copy);
-		~ClapTrap(void);
 		ClapTrap &operator=(ClapTrap const &copy);
-		 void attack(std::string const & target);
-		 void takeDamage(unsigned int amount);
-		 void beRepaired(unsigned int amount);
+		virtual ~ClapTrap(void);
+	
+
+		virtual void attack(std::string const & target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 
 	protected : //permet d'heriter
 		std::string _name;
@@ -29,3 +34,5 @@ class	ClapTrap
 		int _Energy_points;
 		int _Attack_damage;
 };
+
+#endif

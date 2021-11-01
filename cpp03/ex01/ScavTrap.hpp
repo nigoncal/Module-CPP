@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef  SCAV_TRAP_H
+# define SCAV_TRAP_H
+
 #include <iostream>
 #include "ClapTrap.hpp"
 
@@ -20,7 +23,10 @@ class ScavTrap : public ClapTrap
 			ScavTrap(ScavTrap const &copy);
 			~ScavTrap(void);
 			ScavTrap &operator=(ScavTrap const &copy);
+
 	void	guardGate();
 	void  	attack(std::string const & target);
 		
 };
+
+#endif

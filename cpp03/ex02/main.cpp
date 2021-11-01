@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ScavTrap.hpp"
+#include"FragTrap.hpp"
 
 int main (void)
 {
-	ScavTrap soldier = ScavTrap("John");
+	FragTrap soldier = FragTrap("John");
 
     soldier.attack("bob"); // est redef dans le ScavTrap
     soldier.takeDamage(30); // est call directement par rapport au parent

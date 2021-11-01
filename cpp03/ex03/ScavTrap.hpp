@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 18:00:59 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/28 14:33:02 by nigoncal         ###   ########lyon.fr   */
+/*   Created: 2021/10/28 11:29:12 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/10/28 13:04:33 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef  SCAV_TRAP_H
+# define SCAV_TRAP_H
 
-int main (void)
+#include <iostream>
+#include "ClapTrap.hpp"
+
+class ScavTrap : virtual public ClapTrap
 {
-	FragTrap soldier = FragTrap("John");
+	public:
+			ScavTrap(std::string name);
+			ScavTrap(ScavTrap const &copy);
+			~ScavTrap(void);
+			ScavTrap &operator=(ScavTrap const &copy);
 
-	soldier.attack("Mike");
-	soldier.takeDamage(30);
-	soldier.beRepaired(20);
+	void	guardGate();
+	void  	attack(std::string const & target);
+		
+};
 
-	soldier.highFivesGuys();
-	
-	DiamondTrap diamon = DiamondTrap("A");
-	
-	diamon.attack("B");
-
-	diamon.beRepaired(10);
-
-	diamon.whoAmI();
-
-	return 0;
-}
+#endif

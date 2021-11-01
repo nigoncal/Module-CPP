@@ -10,18 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef  FRAG_TRAP_H
+# define FRAG_TRAP_H
+
 #include "ClapTrap.hpp"
 
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	public:
 			FragTrap(std::string name);
 			FragTrap(FragTrap const &copy);
 			~FragTrap(void);
 			FragTrap &operator=(FragTrap const &copy);
-	void	guardGate();
-	void  	attack(std::string const & target);
-		
+
+			void highFivesGuys(void);
 };
+
+#endif

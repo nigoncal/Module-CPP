@@ -12,14 +12,17 @@
 
 #include <iostream>
 
+#ifndef  CLAP_TRAP_H
+# define CLAP_TRAP_H
+
 class	ClapTrap
 {
 	public :
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const &copy);
-		~ClapTrap(void);
+		virtual ~ClapTrap(void);
 		ClapTrap &operator=(ClapTrap const &copy);
-		 void attack(std::string const & target);
+		virtual void attack(std::string const & target);
 		 void takeDamage(unsigned int amount);
 		 void beRepaired(unsigned int amount);
 
@@ -29,3 +32,5 @@ class	ClapTrap
 		int _Energy_points;
 		int _Attack_damage;
 };
+
+#endif

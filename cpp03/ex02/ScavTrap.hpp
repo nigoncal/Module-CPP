@@ -6,9 +6,12 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 11:29:12 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/28 14:28:13 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/10/28 13:04:33 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef  SCAV_TRAP_H
+# define SCAV_TRAP_H
 
 #include <iostream>
 #include "ClapTrap.hpp"
@@ -21,5 +24,9 @@ class ScavTrap : public ClapTrap
 			~ScavTrap(void);
 			ScavTrap &operator=(ScavTrap const &copy);
 
-			void highFivesGuys(void);
+	void	guardGate();
+	void  	attack(std::string const & target);
+		
 };
+
+#endif
