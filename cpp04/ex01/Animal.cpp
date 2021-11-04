@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 12:27:06 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/11/02 12:27:07 by nigoncal         ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Animal.hpp"
 
 Animal::Animal(void)
@@ -25,6 +13,7 @@ Animal::Animal(Animal const &copy)
 
 Animal &Animal::operator=(Animal const &copy)
 {
+	std::cout<<"operator animal called"<<std::endl;
 	this->type = copy.type;
 	return *this;
 }

@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 12:27:14 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/11/02 12:27:15 by nigoncal         ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Brain.hpp"
 
 Brain::Brain(void)
@@ -23,6 +11,7 @@ Brain::Brain(void)
 
 Brain::Brain(Brain const &copy)
 {
+	std::cout<<"Brain constructor by copy has been called"<<std::endl;
 	for (int i = 0; i < MAX_IDEAS; i++) {
 		this->ideas[i] = copy.ideas[i];
 	}

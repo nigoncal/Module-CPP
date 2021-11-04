@@ -1,26 +1,15 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 12:27:30 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/11/02 12:27:31 by nigoncal         ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Cat.hpp"
 
 Cat::Cat(void)
 {
+	std::cout<<"Cat default constructor has been called"<<std::endl;
 	this->setType("Cat");
 	this->brain = new Brain();
-	std::cout << "Cat created" << std::endl;
 }
 
 Cat::Cat(Cat const &copy)
 {
+	std::cout<<"Cat constructor by copy has been called"<<std::endl;
 	this->type = copy.type;
 	this->brain = new Brain(*copy.brain);
 }

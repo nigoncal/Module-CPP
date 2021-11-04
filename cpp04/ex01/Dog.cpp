@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 12:27:40 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/11/02 12:27:41 by nigoncal         ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Dog.hpp"
 #include "Brain.hpp"
 
@@ -22,19 +10,21 @@ Dog::Dog(void)
 
 Dog::Dog(Dog const &copy)
 {
+	std::cout << "Dog copy constructor called" << std::endl;
+
 	this->type = copy.type;
 	this->brain = new Brain(*copy.brain);
 }
 
 Dog &Dog::operator=(Dog &copy)
 {
+	std::cout << "Return THIS BRO BRO BRO" << std::endl;
+
 	this->type = copy.type;
 
 	delete this->brain;
 
 	this->brain = new Brain(*copy.brain);
-
-	std::cout << "Return THIS BRO BRO BRO" << std::endl;
 
 	return *this;
 }

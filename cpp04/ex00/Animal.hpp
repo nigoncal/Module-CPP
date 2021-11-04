@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 12:26:12 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/11/02 12:26:15 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/11/04 18:07:26 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ class Animal
 	virtual void	makeSound(void) const;
 
 	protected:
-
-	std::string type;
+		std::string type;
 };
 
 #endif

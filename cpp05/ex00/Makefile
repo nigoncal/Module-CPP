@@ -6,10 +6,7 @@ PATH_INC = ./
 CXX = clang++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC =		AAnimal.cpp \
-			Dog.cpp \
-			Cat.cpp \
-			Brain.cpp \
+SRC =		Bureaucrat.cpp \
 			main.cpp
 
 OBJ = $(addprefix $(PATH_SRC), $(SRC:.cpp=.o))

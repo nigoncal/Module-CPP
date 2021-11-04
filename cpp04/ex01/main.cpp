@@ -1,37 +1,43 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 12:27:50 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/11/02 12:27:51 by nigoncal         ###   ########lyon.fr   */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	Cat catSource;
+	Cat catDest(catSource);
+	
+std::cout<<std::endl<<"catSource brain adress:"<<catSource.getBrain()<<std::endl;
+std::cout<<std::endl<<"catDest brain adress:"<<catDest.getBrain()<<std::endl;
+std::cout<<std::endl<<"catSource type :"<<catSource.getType()<<std::endl;
+std::cout<<std::endl<<"CatDest type :"<<catDest.getType()<<std::endl;
+catDest.setType("saucison");
+std::cout<<std::endl<<"catSource type :"<<catSource.getType()<<std::endl;
+std::cout<<std::endl<<"CatDest type :"<<catDest.getType()<<std::endl;
 
-	Animal *animals = new Animal[10];
+// je peux changer le type sans que ça affecte la source grace au new
 
-	for (int i = 0; i < 10; i++) {
-		if (i < 5)
-			animals[i] = Dog();
+	std::cout<<std::endl;
+	int index = 0;
+	Animal *animals[10];// = new Animal[10];
+			std::cout<<std::endl;
+
+	while (index < 10) {
+		if (index < 5)
+		{
+			animals[index] = new Dog();
+			std::cout<<std::endl;
+		}
 		else
-			animals[i] = Cat();
+		{
+			animals[index] = new Cat();
+			std::cout<<std::endl;
+			
+		}
+		index++;
 	}
 
-	Dog snoopdog = Dog();
-	Dog doggydog = Dog();
-
-	snoopdog.getBrain()->addIdea("I want a car");
+	/*snoopdog.getBrain()->addIdea("I want a car");
 	snoopdog.getBrain()->addIdea("I want a drink");
 	snoopdog.getBrain()->addIdea("I want a phone");
 
@@ -46,9 +52,31 @@ int main()
 	std::cout << "HELLODOG: " << doggydog.getBrain()->getIdea(0) << std::endl;
 	std::cout << "HELLODOG: " << doggydog.getBrain()->getIdea(1) << std::endl;
 	std::cout << "HELLODOG: " << doggydog.getBrain()->getIdea(2) << std::endl;
+*/
+	std::cout<<std::endl;
+	index = 0;
+		std::cout<<std::endl;
+	while(index < 10)
+	{
+		std::cout<<std::endl<<index<<std::endl;
+		delete animals[index];
+		index++;
+	}
+	std::cout<<"test correc"<<std::endl<<std::endl;
+	Dog basic;
+	{
+		std::cout << std::endl << "coucou1" << std::endl;
+		Dog tmp;
+		tmp = basic;
+		tmp.setType("not a dog");
+		std::cout << "coucou2" << std::endl << std::endl;
+	}
+	std::cout << basic.getType() << std::endl;
+	basic.makeSound();
+	std::cout<<std::endl;
+	std::cout<<std::endl;
+	//delete [] animals;
 
-	delete [] animals;
-
-	delete j;//should not create a leak
-	delete i;
+/*	delete j;//should not create a leak
+	delete i;*/
 }

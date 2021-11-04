@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 14:12:40 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/10/28 14:25:03 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/11/03 13:43:10 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "ClapTrap.hpp"
 
 
-class FragTrap : public virtual ClapTrap
+class FragTrap : public ClapTrap
 {
 	public:
 			FragTrap(std::string name);
