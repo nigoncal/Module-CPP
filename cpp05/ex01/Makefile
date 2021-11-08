@@ -1,4 +1,4 @@
-NAME = Bureaucrat
+NAME = form
 PATH_SRC = ./
 PATH_OBJ = ./
 PATH_INC = ./
