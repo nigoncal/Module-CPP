@@ -26,6 +26,8 @@ class Form
 
 		bool isSigned() const;
 		void setSigned(bool state);
+
+		virtual void execute(Bureaucrat const &executor) const = 0;
 	
 		class GradeTooHighException : public std::exception {
 			public:
@@ -40,6 +42,14 @@ class Form
 				virtual const char* what() const throw ()
 				{
 					return "Grade to low.";
+				}
+		};
+
+		class FormNotSignedException : public std::exception {
+			public:
+				virtual const char* what() const throw ()
+				{
+					return "Form must be signed.";
 				}
 		};
 

@@ -39,6 +39,14 @@ void Form::beSigned(Bureaucrat const &brt)
 	std::cout << brt.getName() << " signs " << this->getName() << std::endl;
 }
 
+void Form::execute(Bureaucrat const &executor) const
+{
+	if (!this->isSigned())
+		throw FormNotSignedException();
+	if (executor.getGrade() > this->getGradeToExec())
+		throw GradeTooLowException();
+}
+
 std::string Form::getName() const
 {
 	return this->_name;

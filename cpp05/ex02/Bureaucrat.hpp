@@ -3,12 +3,14 @@
 
 #include <iostream>
 
+class Form;
+
 class Bureaucrat
 {
 	public:
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat(Bureaucrat const &cpy);
-		virtual ~Bureaucrat();
+		~Bureaucrat();
 		Bureaucrat &operator=(Bureaucrat const &cpy);
 
 		std::string getName() const;
@@ -17,12 +19,14 @@ class Bureaucrat
 		void setGrade(int value);
 		void increment();
 		void decrement();
+		void signForm(Form &form);
+		void executeForm(Form const &form);
 
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char* what() const throw ()
 				{
-					return "Grade to high.";
+					return ("Note to high.");
 				}
 		};
 
@@ -30,7 +34,7 @@ class Bureaucrat
 			public:
 				virtual const char* what() const throw ()
 				{
-					return "Grade to low.";
+					return ("Note to low.");
 				}
 		};
 

@@ -1,4 +1,4 @@
-NAME = form
+NAME = yo
 PATH_SRC = ./
 PATH_OBJ = ./
 PATH_INC = ./
@@ -7,6 +7,7 @@ CXX = clang++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC =		Bureaucrat.cpp \
+			Form.cpp \
 			main.cpp
 
 OBJ = $(addprefix $(PATH_SRC), $(SRC:.cpp=.o))
