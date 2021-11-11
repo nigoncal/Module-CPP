@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/11 16:11:21 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/11/11 16:11:22 by nigoncal         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PresidentialPardonForm.hpp"
 #include <fstream>
 
@@ -32,12 +44,5 @@ void PresidentialPardonForm::setTarget(std::string target)
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	Form::execute(executor);
-	srand (time(NULL));
-	if (rand() % 2)
-	{
-		std::cout << "Bzzzzbzzbzbzbzbz .." << std::endl;
-		std::cout << executor.getName() + " has been robomized \\/" << std::endl;
-	}
-	else
-		std::cout << "Robimization failed :(" << std::endl;
+	std::cout << executor.getName() + " is pardoned." << std::endl;
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/10 13:49:59 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/11/10 14:43:50 by nigoncal         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_H
 # define BUREAUCRAT_H
 
@@ -12,8 +24,8 @@ class Bureaucrat
 		Bureaucrat &operator=(Bureaucrat const &cpy);
 
 		std::string getName() const;
-		void setName(std::string name);
 		int	getGrade() const;
+		void setName(std::string name);
 		void setGrade(int value);
 		void increment();
 		void decrement();
@@ -36,12 +48,11 @@ class Bureaucrat
 
 	private:
 		Bureaucrat();
-
 		std::string _name;
 		int	_grade;
 
 };
 
-std::ostream	&operator<<(std::ostream &out, const Bureaucrat &yo);
+std::ostream	&operator<<(std::ostream &out, const Bureaucrat &Bureaucrat);
 
 #endif

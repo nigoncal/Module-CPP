@@ -1,7 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/11 16:12:26 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/11/11 16:12:27 by nigoncal         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FORM_H
 # define FORM_H
 
 #include <iostream>
+#include "Bureaucrat.hpp"
+
 
 class Bureaucrat;
 

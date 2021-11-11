@@ -37,25 +37,9 @@ std::cout<<std::endl<<"CatDest type :"<<catDest.getType()<<std::endl;
 		index++;
 	}
 
-	/*snoopdog.getBrain()->addIdea("I want a car");
-	snoopdog.getBrain()->addIdea("I want a drink");
-	snoopdog.getBrain()->addIdea("I want a phone");
-
-	doggydog = snoopdog;
-
-	Dog hellodog = Dog(doggydog);
-
-	std::cout << "DOGGYDOG: " << doggydog.getBrain()->getIdea(0) << std::endl;
-	std::cout << "DOGGYDOG: " << doggydog.getBrain()->getIdea(1) << std::endl;
-	std::cout << "DOGGYDOG: " << doggydog.getBrain()->getIdea(2) << std::endl;
-
-	std::cout << "HELLODOG: " << doggydog.getBrain()->getIdea(0) << std::endl;
-	std::cout << "HELLODOG: " << doggydog.getBrain()->getIdea(1) << std::endl;
-	std::cout << "HELLODOG: " << doggydog.getBrain()->getIdea(2) << std::endl;
-*/
 	std::cout<<std::endl;
 	index = 0;
-		std::cout<<std::endl;
+	std::cout<<std::endl;
 	while(index < 10)
 	{
 		std::cout<<std::endl<<index<<std::endl;

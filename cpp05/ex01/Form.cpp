@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/11 16:10:36 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/11/11 16:10:37 by nigoncal         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
@@ -17,7 +29,7 @@ Form::Form(Form const &cpy)
 {
 	this->_name = cpy.getName();
 	this->_gradeToExec = cpy.getGradeToExec();
-	this->_gradeToSign = cpy.getGradeToSign();
+	this->_gradeToSign = cpy.getGradeToSign(); 
 	this->_isSigned = false;
 }
 
@@ -30,13 +42,13 @@ Form &Form::operator=(Form const &cpy)
 	return *this;
 }
 
-void Form::beSigned(Bureaucrat const &brt)
+void Form::beSigned(Bureaucrat const &Bureaucrat)
 {
-	if (brt.getGrade() > this->getGradeToSign())
+	if (Bureaucrat.getGrade() > this->getGradeToSign())
 		throw GradeTooLowException();
 
 	this->setSigned(true);
-	std::cout << brt.getName() << " signs " << this->getName() << std::endl;
+	std::cout << Bureaucrat.getName() << " signs " << this->getName() << std::endl;
 }
 
 std::string Form::getName() const

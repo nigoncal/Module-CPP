@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/11 16:11:31 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/11/11 16:11:32 by nigoncal         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 #include <fstream>
 
@@ -32,5 +44,12 @@ void RobotomyRequestForm::setTarget(std::string target)
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
 	Form::execute(executor);
-	std::cout << executor.getName() + " is pardoned." << std::endl;
+	srand (time(NULL));
+	if (rand() % 2)
+	{
+		std::cout << "Bzzzzbzzbzbzbzbz .." << std::endl;
+		std::cout << executor.getName() + " has been robomized \\/" << std::endl;
+	}
+	else
+		std::cout << "Robimization failed :(" << std::endl;
 }

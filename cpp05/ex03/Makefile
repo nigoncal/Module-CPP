@@ -1,4 +1,4 @@
-NAME = yo
+NAME = Intern
 PATH_SRC = ./
 PATH_OBJ = ./
 PATH_INC = ./

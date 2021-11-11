@@ -1,4 +1,4 @@
-NAME = yo
+NAME = Brain
 PATH_SRC = ./
 PATH_OBJ = ./
 PATH_INC = ./

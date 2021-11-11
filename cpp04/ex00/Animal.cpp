@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 12:11:16 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/11/02 12:11:17 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/11/08 14:26:19 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,4 @@ void	Animal::makeSound(void) const
 {
 	std::cout << "Animal song" << std::endl;
 }
+

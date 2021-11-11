@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/10 13:50:06 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/11/10 14:01:33 by nigoncal         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat()
@@ -59,8 +71,8 @@ void Bureaucrat::decrement()
 	this->setGrade(this->getGrade() + 1 );
 }
 
-std::ostream &operator<<(std::ostream &out, const Bureaucrat &yo)
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &Bureaucrat)
 {
-	out << "<" + yo.getName() + ">" << " bureaucrat grade <" << yo.getGrade() << ">";
+	out << "<" + Bureaucrat.getName() + ">" << " bureaucrat grade <" << Bureaucrat.getGrade() << ">";
 	return out;
 }
