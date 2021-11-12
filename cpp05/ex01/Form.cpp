@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:10:36 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/11/11 16:10:37 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/11/12 12:58:31 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ Form &Form::operator=(Form const &cpy)
 
 void Form::beSigned(Bureaucrat const &Bureaucrat)
 {
+	if(this->_isSigned == true)
+		throw is_signned();
 	if (Bureaucrat.getGrade() > this->getGradeToSign())
 		throw GradeTooLowException();
 

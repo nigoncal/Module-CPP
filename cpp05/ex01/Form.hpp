@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:10:40 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/11/11 16:10:41 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/11/12 11:57:29 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,13 @@ class Form
 				virtual const char* what() const throw ()
 				{
 					return "Grade to low.";
+				}
+		};
+		class is_signned : public std::exception {
+			public:
+				virtual const char* what() const throw ()
+				{
+					return "form is already signed";
 				}
 		};
 

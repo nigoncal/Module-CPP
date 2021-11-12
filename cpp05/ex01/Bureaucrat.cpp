@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:10:27 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/11/11 16:10:28 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/11/12 12:01:44 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void Bureaucrat::signForm(Form &form)
 	try {
 		form.beSigned(*this);
 	} catch (std::exception &e) {
-		std::cout << this->getName() << " cannot sign " << form.getName() << " because this grade is too low." << std::endl;
+		std::cout << "ERROR: " << e.what() << std::endl;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:10:47 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/11/11 16:10:48 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/11/12 12:11:18 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main()
 {
 	Bureaucrat bob = Bureaucrat("Bob", 21);
 
-	Form carForm = Form("CarForm", 20, 5);
+	Form carForm = Form("CarForm", 20, 50);
 
 	std::cout << bob << std::endl << std::endl;
 
@@ -26,7 +26,7 @@ int	main()
 	try {
 		carForm.beSigned(bob);
 	} catch (std::exception &e) {
-		std::cout << bob.getName() << " cannot sign " << carForm.getName() << " because this grade is too low." << std::endl;
+		std::cout << "ERROR: " << e.what() << std::endl;
 	}
 
 	bob.setGrade(1);
@@ -37,6 +37,6 @@ int	main()
 	try {
 		carForm.beSigned(bob);
 	} catch (std::exception &e) {
-		std::cout << bob.getName() << " cannot sign " << carForm.getName() << " because this grade is too low." << std::endl;
+		std::cout << "ERROR: " << e.what() << std::endl;
 	}
 }

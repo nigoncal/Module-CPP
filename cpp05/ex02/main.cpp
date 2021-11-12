@@ -6,7 +6,7 @@
 /*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:11:17 by nigoncal          #+#    #+#             */
-/*   Updated: 2021/11/11 16:11:19 by nigoncal         ###   ########lyon.fr   */
+/*   Updated: 2021/11/12 13:11:16 by nigoncal         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int	main()
 {
-	Bureaucrat bob("Bob", 1);
+	Bureaucrat bob("Bob", 20);
 	ShrubberyCreationForm shrub("Shrub");
 	PresidentialPardonForm obama("Obama");
 	RobotomyRequestForm bender("Bender");
@@ -33,7 +33,6 @@ int	main()
 		shrub.execute(bob);
 		obama.execute(bob);
 		bender.execute(bob);
-
 
 	} catch (std::exception &e) {
 		std::cout << "You can't execute this form because : " << e.what() << std::endl;
