@@ -1,66 +1,87 @@
+#include <stdlib.h>
 #include <iostream>
-#include "Base.hpp"
-#include "Hello.hpp"
+#include <cstdlib>
+#include <ctime>
+#include <vector>
 
-Base::~Base() {}
+class Base { public: virtual ~Base(void) {} };
+class A: public Base {};
+class B: public Base {};
+class C: public Base {};
 
-Base * generate(void)
+Base *generate(void)
 {
-	srand(time(0) + std::clock());
+	int		r;
 
-	int nbr = rand() % 3;
+	srand ((unsigned int)time(0));
 
-	if (nbr == 0)
-		return new A();
-	if (nbr == 1)
-		return new B();
-	if (nbr == 2)
-		return new C();
-
-	return NULL;
+	r = rand() % 3;
+	if (r == 1)
+		return new A;
+	else if (r == 2)
+		return new B;
+	else
+		return new C;
 }
 
-void identify_from_pointer(Base * p)
+void	identify(Base *p)
 {
-	if (dynamic_cast<A*>(p) != NULL)
-		std::cout << "A" << std::endl;
-	if (dynamic_cast<B*>(p) != NULL)
-		std::cout << "B" << std::endl;
-	if (dynamic_cast<C*>(p) != NULL)
-		std::cout << "C" << std::endl;
+	A *classA = dynamic_cast<A*>(p);
+	B *classB = dynamic_cast<B*>(p);
+	C *classC = dynamic_cast<C*>(p);
+
+	if (classA != NULL)
+		std::cout << "type A" << std::endl;
+	else if (classB != NULL)
+		std::cout << "type B" << std::endl;
+	else if (classC != NULL)
+		std::cout << "type C" << std::endl;
+	else
+		std::cout << "Erreur type" << std::endl;
 }
 
-void identify_from_reference(Base & p)
+void	identify(Base &p)
 {
-	Base result;
-
-	try {
-		result = dynamic_cast<A&>(p);
-		std::cout << "A" << std::endl;
-	} catch (std::bad_cast &bc) {}
-
-	try {
-		result = dynamic_cast<B&>(p);
-		std::cout << "B" << std::endl;
-	} catch (std::bad_cast &bc) {}
-
-	try {
-		result = dynamic_cast<C&>(p);
-		std::cout << "C" << std::endl;
-	} catch (std::bad_cast &bc) {}
+	// Base test;
+	try
+	{
+		// test = dynamic_cast<A&>(p);
+		A classA = dynamic_cast<A&>(p);
+		std::cout << "type A" << std::endl;
+		return ;
+	}
+	catch (std::bad_cast &bc)
+	{
+		;
+	}
+	try
+	{
+		// test = dynamic_cast<B&>(p);
+		B classB = dynamic_cast<B&>(p);
+		std::cout << "type B" << std::endl;
+		return ;
+	}
+	catch(std::bad_cast &bc)
+	{
+		;
+	}
+	try
+	{
+		// test = dynamic_cast<C&>(p);
+		C classC = dynamic_cast<C&>(p);
+		std::cout << "type C" << std::endl;
+		return ;
+	}
+	catch(std::bad_cast &bc)
+	{
+		;
+	}
 }
 
-int	main()
+int main(void)
 {
-	Base *base = generate();
-
-	std::cout << "From pointer : " << std::endl;
-
-	identify_from_pointer(base);
-
-	std::cout << "From reference : " << std::endl;
-
-	identify_from_reference(*base);
-
-	return 0;
+	Base *t = generate();
+	identify(t);
+	identify(*t);
+	return (0);
 }
