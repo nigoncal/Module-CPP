@@ -42,10 +42,8 @@ void	identify(Base *p)
 
 void	identify(Base &p)
 {
-	// Base test;
 	try
 	{
-		// test = dynamic_cast<A&>(p);
 		A classA = dynamic_cast<A&>(p);
 		std::cout << "type A" << std::endl;
 		return ;
@@ -56,7 +54,6 @@ void	identify(Base &p)
 	}
 	try
 	{
-		// test = dynamic_cast<B&>(p);
 		B classB = dynamic_cast<B&>(p);
 		std::cout << "type B" << std::endl;
 		return ;
@@ -67,7 +64,6 @@ void	identify(Base &p)
 	}
 	try
 	{
-		// test = dynamic_cast<C&>(p);
 		C classC = dynamic_cast<C&>(p);
 		std::cout << "type C" << std::endl;
 		return ;

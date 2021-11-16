@@ -1,6 +1,5 @@
 NAME			=		ex01
 
-
 CC				=		@clang++
 
 CFLAGS			=		-Wall -Werror -Wextra

@@ -1,7 +1,5 @@
 NAME			=		ex00
 
-# HEADER			=		Bureaucrat.hpp
-
 CC				=		@clang++
 
 CFLAGS			=		-Wall -Werror -Wextra -std=c++98
