@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/17 12:08:52 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/11/17 12:08:53 by nigoncal         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 
@@ -18,7 +30,7 @@ class Array
 			this->_array = NULL;
 		}
 
-		Array<T>(unsigned int n): _n(n)
+		Array<T>(unsigned int n): _n(n) // permet l'init avec n'importe quel type
 		{
 			this->_array = new T[n];
 		}
@@ -31,11 +43,6 @@ class Array
 				this->_array[i] = copy._array[i];
 		}
 
-		~Array<T>(void)
-		{
-			delete this->_array;
-		}
-
 		Array &operator=(Array const &rhs)
 		{
 			this->_n = rhs._n;
@@ -45,7 +52,12 @@ class Array
 			return(*this);
 		}
 
-		T	&operator[](unsigned int i)
+		~Array<T>(void)
+		{
+			delete [] this->_array;
+		}
+
+		T	&operator[](unsigned int i) // permet de pointer l'index et de parser les deux éléments
 		{
 			if (i >= this->_n)
 				throw Array<T>::OutOfRange();

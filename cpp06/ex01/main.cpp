@@ -7,7 +7,6 @@ typedef struct s_Data
 
 uintptr_t serialize(Data *ptr)
 {
-	// std::cout << reinterpret_cast<uintptr_t>(ptr) << std::endl; // afficher l'adresse reinterpreté;
 	return(reinterpret_cast<uintptr_t>(ptr));
 }
 

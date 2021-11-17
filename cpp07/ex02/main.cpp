@@ -1,71 +1,70 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nigoncal <nigoncal@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/17 12:08:58 by nigoncal          #+#    #+#             */
+/*   Updated: 2021/11/17 12:08:59 by nigoncal         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "Array.hpp"
 
 int main(void)
 {
-	Array<int> num(180);
+	Array<int> numI(5); // test avec type int, on type le template
+	Array <int> error(0);
+	Array<float> numF(10);
 
+	std::cout<<"---test du parsing []---"<<std::endl;
 	try
 	{
-		num[2] = 15;
-		std::cout << num[2] << std::endl;
-		std::cout << num.size() << std::endl;
+		error[0] = 15;
+		std::cout << error[2];
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
 
+	std::cout<<"---Test d'un tableau d'int---"<<std::endl<<std::endl;
+
+	try
+	{
+		numI[0] = 15;
+		numI[1] = 2;
+		numI[2] = 150458;
+		numI[3] = -1;
+		for(int i = 0; i != 4; i++)
+		std::cout << numI[i] << std::endl;
+		std::cout <<std::endl<<"size du tableau : "<<  numI.size() << std::endl<< std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+		std::cout<<"---Test d'un tableau de float----"<<std::endl<<std::endl;
+
+	try
+	{
+		numF[0] = 15.65;
+		numF[1] = 255.5848;
+		numF[2] = 0;
+		numF[3] = -1.546;
+		for(int i = 0; i != 4; i++)
+		std::cout << numF[i] << std::endl;
+		std::cout << numF.size() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	
+
+
+
 }
-
-
-// #define MAX_VAL 750
-// int main(int, char**)
-// {
-// 	Array<int> numbers(MAX_VAL);
-// 	int* mirror = new int[MAX_VAL];
-// 	srand(time(NULL));
-// 	for (int i = 0; i < MAX_VAL; i++)
-// 	{
-// 		const int value = rand();
-// 		numbers[i] = value;
-// 		mirror[i] = value;
-// 	}
-// 	//SCOPE
-// 	{
-// 		Array<int> tmp = numbers;
-// 		Array<int> test(tmp);
-// 	}	
-// 	for (int i = 0; i < MAX_VAL; i++)
-// 	{
-// 		if (mirror[i] != numbers[i])
-// 		{
-// 			std::cerr << "didn't save the same value!!" << std::endl;
-// 			return 1;
-// 		}
-// 	}
-// 	try
-// 	{
-// 		numbers[2] = 15;
-// 		std::cout << numbers[2] << std::endl;
-// 		std::cout << numbers.size() << std::endl;
-// 	}
-// 	catch(const std::exception& e)
-// 	{
-// 		std::cerr << e.what() << '\n';
-// 	}
-// 	try
-// 	{
-// 		numbers[MAX_VAL] = 0;
-// 	}
-// 	catch(const std::exception& e)
-// 	{
-// 		std::cerr << e.what() << '\n';
-// 	}	
-// 	for (int i = 0; i < MAX_VAL; i++)
-// 	{
-// 		numbers[i] = rand();
-// 	}
-// 	delete [] mirror;//
-// 	return 0;
-// }
