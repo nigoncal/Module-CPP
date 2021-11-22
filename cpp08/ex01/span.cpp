@@ -1,79 +1,106 @@
 #include "span.hpp"
-#include <vector>
-#include <iostream>
 
-Span::Span()
-{}
-
-Span::Span(unsigned int n) : _max(n)
+Span::Span(void)
 {
-	this->_list.reserve(n);
+	this->_n = 0;
+	this->_space = 0;
+	this->_v1 = new std::vector<int>[0];
+	return ;
 }
 
-Span::~Span()
-{}
-
-Span::Span(Span const &cpy)
+Span::Span(unsigned int n)
 {
-	*this = cpy;
+	this->_n = n;
+	this->_space = 0;
+	this->_v1 = new std::vector<int>[this->_n];
+	return ;
 }
 
-Span &Span::operator=(Span const &cpy)
+Span::Span(Span const &copy)
 {
-	this->_max = cpy._max;
-	this->_list = cpy._list;
-	return *this;
+	this->_n = copy._n;
+	this->_space = 0;
+	this->_v1 = new std::vector<int>[this->_n];
+	this->_v1 = copy._v1;
 }
 
-void Span::addNumber(int nbr)
+Span::~Span(void)
 {
-	if (this->_list.size() >= _max)
-		throw MaxNbrException();
-
-	std::vector<int>::iterator iterator;
-
-	iterator = std::find(this->_list.begin(), this->_list.end(), nbr);
-
-	if (iterator != this->_list.end())
-		throw NbrExistException();
-	
-	this->_list.push_back(nbr);
+	delete [] this->_v1;
+	return ;
 }
 
-int	Span::shortestSpan()
+Span	&Span::operator=(Span const &rhs)
 {
-	if (this->_list.size() <= 1)
-		throw NoNbrException();
-	std::sort(this->_list.begin(), this->_list.end());
+	this->_n = rhs._n;
+	this->_space = 0;
+	this->_v1 = new std::vector<int>[this->_n];
+	this->_v1 = rhs._v1;
+	return(*this);
+}
+
+void	Span::addNumber(int n)
+{
+	try
+	{
+		if (this->_space == this->_n)
+			throw numberExceptionFull();
+		this->_v1->push_back(n);
+		this->_space++;
+	}
+	catch(numberExceptionFull& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+}
+
+void	Span::addRange(std::vector<int>::const_iterator it, std::vector<int>::const_iterator ite)
+{
+	while (it < ite)
+	{
+		if (this->_space == this->_n)
+			throw numberExceptionFull();
+		this->_v1->push_back(*it);
+		it++;
+		this->_space++;
+	}
+}
+
+int Span::shortestSpan(void)
+{
+	if (this->_v1->size() <= 1)
+		throw numberExceptionEmpty();
+	std::sort(this->_v1->begin(), this->_v1->end());
 	std::vector<int>::const_iterator it;
 	std::vector<int>::const_iterator i;
-	std::vector<int>::const_iterator ite = this->_list.end();
+	std::vector<int>::const_iterator ite = this->_v1->end();
 	int shortest = INT_MAX;
-	for (it = this->_list.begin(); it != ite; ++it)
+	for (it = this->_v1->begin(); it != ite; ++it)
 	{
 		for (i = it + 1; i != ite; ++i)
 			if (shortest > *i - *it)
 				shortest = *i - *it;
 	}
 	return shortest;
-
 }
 
-
-unsigned int Span::longestSpan()
+int Span::longestSpan(void)
 {
-	if (this->_list.size() <= 1)
-		throw NoNbrException();
-	
-	int a = 0;
-	int b = 0;
-	std::vector<int>::iterator iterator;
 
-	iterator = std::min_element(this->_list.begin(), this->_list.end());
-	a = *iterator;
+	if (this->_v1->size() <= 1)
+		throw numberExceptionEmpty();
+	std::sort(this->_v1->begin(), this->_v1->end());
+	std::vector<int>::const_iterator it = this->_v1->begin();
+	std::vector<int>::const_iterator ite = this->_v1->end() - 1;
+	return (*ite - *it);
+}
 
-	iterator = std::max_element(this->_list.begin(), this->_list.end());
-	b = *iterator;
+const char *Span::numberExceptionEmpty::what() const throw()
+{
+	return ("it's empty or just one number");
+}
 
-	return static_cast<unsigned int>(std::max(a, b) - std::min(a, b));
+const char *Span::numberExceptionFull::what() const throw()
+{
+	return ("it's full");
 }
