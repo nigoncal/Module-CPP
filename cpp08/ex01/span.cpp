@@ -40,25 +40,25 @@ void Span::addNumber(int nbr)
 	this->_list.push_back(nbr);
 }
 
-unsigned int	Span::shortestSpan()
+int	Span::shortestSpan()
 {
 	if (this->_list.size() <= 1)
 		throw NoNbrException();
-	
-	int a = 0;
-	int b = 0;
-	std::vector<int>::iterator iterator;
-	std::vector<int>::iterator next;
+	std::sort(this->_list.begin(), this->_list.end());
+	std::vector<int>::const_iterator it;
+	std::vector<int>::const_iterator i;
+	std::vector<int>::const_iterator ite = this->_list.end();
+	int shortest = INT_MAX;
+	for (it = this->_list.begin(); it != ite; ++it)
+	{
+		for (i = it + 1; i != ite; ++i)
+			if (shortest > *i - *it)
+				shortest = *i - *it;
+	}
+	return shortest;
 
-	iterator = this->_list.begin();
-
-	next = std::next(iterator, 1);
-
-	a = *iterator;
-	b = *next;
-
-	return static_cast<unsigned int>(std::max(a, b) - std::min(a, b));
 }
+
 
 unsigned int Span::longestSpan()
 {

@@ -1,4 +1,4 @@
-NAME = yo
+NAME = ex01
 PATH_SRC = ./
 PATH_OBJ = ./
 PATH_INC = ./

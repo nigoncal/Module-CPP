@@ -37,7 +37,7 @@ class Span
 		};
 
 		void addNumber(int nbr);
-		unsigned int shortestSpan();
+		int shortestSpan();
 		unsigned int longestSpan();
 
 	private:
