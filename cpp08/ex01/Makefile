@@ -1,35 +1,27 @@
-NAME			=		ex01
+NAME = yo
+PATH_SRC = ./
+PATH_OBJ = ./
+PATH_INC = ./
 
-HEADER			=		span.hpp
+CXX = clang++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CC				=		@clang++
+SRC =		main.cpp \
+			span.cpp 
 
-CFLAGS			=		-Wall -Werror -Wextra
+OBJ = $(addprefix $(PATH_SRC), $(SRC:.cpp=.o))
 
-SRCS			=		main.cpp \
-						span.cpp
+.PHONY: clean fclean
 
-OBJS			=		$(SRCS:.cpp=.o)
+all: $(NAME)
 
-all				:		$(NAME)
+$(NAME): $(OBJ)
+	$(CXX) $(OBJ) -o $(NAME)
 
+clean:
+	rm -f $(OBJ)
 
-$(NAME)		: $(OBJS) $(HEADER)
-		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-		@echo "\033[34m[$(NAME)] Compiled\033[0m"
+fclean: clean
+	rm -f $(NAME)
 
-%.o: %.cpp $(HEADER)
-		$(CC) $(CFLAGS) -c $< -o $@
-
-clean		:
-		@echo "\033[32m[$(NAME)] Clean\033[0m"
-		@rm -f $(OBJS)
-
-fclean		:
-		@echo "\033[32m[$(NAME)] Clean\033[0m"
-		@rm -f $(OBJS)
-		@rm -f $(NAME)
-
-re			:		fclean all
-
-.PHONY: all bonus clean fclean re
+re: fclean all

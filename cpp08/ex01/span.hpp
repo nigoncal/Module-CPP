@@ -1,41 +1,50 @@
-#ifndef SPAN_HPP
-#define SPAN_HPP
+#ifndef SPAN_H
+# define SPAN_H
 
-#include <iostream>
-#include <list>
 #include <vector>
 #include <algorithm>
 
 class Span
 {
 	public:
-		Span(void);
 		Span(unsigned int n);
-		Span(Span const &copy);
-		~Span(void);
+		~Span();
+		Span(Span const &cpy);
+		Span &operator=(Span const &cpy);
 
-		Span &operator=(Span const &rhs);
-		void addNumber(int n);
-		void addRange(std::vector<int>::const_iterator it, std::vector<int>::const_iterator ite);
-		int shortestSpan(void);
-		int longestSpan(void);
+		class NbrExistException : public std::exception {
+			public:
+				virtual const char* what() const throw ()
+				{
+					return ("The number exist.");
+				}
+		};
 
-	class numberExceptionEmpty: public std::exception
-	{
-		public:
-			virtual const char *what() const throw();
-	};
+		class MaxNbrException : public std::exception {
+			public:
+				virtual const char* what() const throw ()
+				{
+					return ("The list is full.");
+				}
+		};
 
-	class numberExceptionFull: public std::exception
-	{
-		public:
-			virtual const char *what() const throw();
-	};
+		class NoNbrException : public std::exception {
+			public:
+				virtual const char* what() const throw ()
+				{
+					return ("There is no nbr.");
+				}
+		};
+
+		void addNumber(int nbr);
+		unsigned int shortestSpan();
+		unsigned int longestSpan();
 
 	private:
-		unsigned int		_n;
-		unsigned int		_space;
-		std::vector<int>	*_v1;
+		Span();
+
+		std::vector<int>	_list;
+		unsigned int		_max;
 };
 
 #endif
